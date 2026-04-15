@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tim's Floor Sanding | Timber Floor Sanding & Polishing Newcastle NSW</title>
+  <meta name="description" content="Professional timber floor sanding, polishing and restoration in Newcastle NSW. Free quotes. Tim's Floor Sanding — local, reliable, exceptional results.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; color: #1a1a1a; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; width: 100%; background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(8px); padding: 18px 40px;
+      display: flex; justify-content: space-between; align-items: center;
+      z-index: 100; border-bottom: 1px solid #f0e8df;
+    }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #8B4513; letter-spacing: -0.5px; }
+    .logo span { color: #c8742a; }
+    .nav-links a { margin-left: 28px; text-decoration: none; color: #444; font-size: 0.95rem; font-weight: 500; }
+    .nav-links a:hover { color: #8B4513; }
+    .nav-cta {
+      background: #8B4513; color: white !important; padding: 10px 22px;
+      border-radius: 6px; font-weight: 600 !important;
+    }
+    .nav-cta:hover { background: #a0521a !important; color: white !important; }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #3d1f0a 0%, #6b3210 40%, #8B4513 100%);
+      display: flex; align-items: center; justify-content: center;
+      text-align: center; padding: 120px 20px 80px;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .hero-content { position: relative; max-width: 780px; }
+    .hero-badge {
+      display: inline-block; background: rgba(255,255,255,0.15); color: #f5dfc0;
+      padding: 6px 18px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;
+      letter-spacing: 0.5px; margin-bottom: 24px; border: 1px solid rgba(255,255,255,0.2);
+    }
+    .hero h1 { font-size: clamp(2.4rem, 6vw, 4rem); color: white; font-weight: 800; line-height: 1.15; margin-bottom: 20px; }
+    .hero h1 span { color: #f5c87a; }
+    .hero p { font-size: 1.2rem; color: #e8cdb0; max-width: 580px; margin: 0 auto 40px; line-height: 1.6; }
+    .hero-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: #f5c87a; color: #3d1f0a; padding: 16px 36px;
+      border-radius: 8px; font-weight: 700; font-size: 1rem;
+      text-decoration: none; transition: all 0.2s;
+    }
+    .btn-primary:hover { background: #f7d492; transform: translateY(-2px); }
+    .btn-secondary {
+      background: transparent; color: white; padding: 16px 36px;
+      border-radius: 8px; font-weight: 600; font-size: 1rem;
+      text-decoration: none; border: 2px solid rgba(255,255,255,0.4);
+      transition: all 0.2s;
+    }
+    .btn-secondary:hover { border-color: white; background: rgba(255,255,255,0.1); }
+
+    /* TRUST BAR */
+    .trust-bar {
+      background: #fdf8f4; border-bottom: 1px solid #f0e8df;
+      padding: 20px 40px; display: flex; justify-content: center;
+      gap: 60px; flex-wrap: wrap;
+    }
+    .trust-item { display: flex; align-items: center; gap: 10px; color: #555; font-size: 0.95rem; }
+    .trust-item .icon { font-size: 1.3rem; }
+    .trust-item strong { color: #3d1f0a; }
+
+    /* SECTIONS */
+    section { padding: 90px 20px; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .section-label { color: #c8742a; font-size: 0.85rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 10px; }
+    .section-title { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; color: #1a1a1a; margin-bottom: 16px; line-height: 1.2; }
+    .section-sub { font-size: 1.1rem; color: #666; max-width: 600px; line-height: 1.6; }
+
+    /* SERVICES */
+    .services { background: white; }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 50px; }
+    .service-card {
+      background: #fdf8f4; border-radius: 12px; padding: 36px 28px;
+      border: 1px solid #f0e8df; transition: all 0.25s;
+    }
+    .service-card:hover { border-color: #c8742a; transform: translateY(-4px); box-shadow: 0 12px 40px rgba(139,69,19,0.12); }
+    .service-icon { font-size: 2.4rem; margin-bottom: 18px; }
+    .service-card h3 { font-size: 1.2rem; font-weight: 700; color: #1a1a1a; margin-bottom: 10px; }
+    .service-card p { color: #666; font-size: 0.95rem; line-height: 1.6; }
+
+    /* WHY US */
+    .why { background: #fdf8f4; }
+    .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 32px; margin-top: 50px; }
+    .why-item { text-align: center; }
+    .why-num { font-size: 2.8rem; font-weight: 800; color: #c8742a; line-height: 1; margin-bottom: 8px; }
+    .why-item h4 { font-size: 1.05rem; font-weight: 700; color: #1a1a1a; margin-bottom: 6px; }
+    .why-item p { color: #666; font-size: 0.9rem; line-height: 1.5; }
+
+    /* PROCESS */
+    .process { background: white; }
+    .process-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0; margin-top: 50px; position: relative; }
+    .step { text-align: center; padding: 20px; position: relative; }
+    .step-num {
+      width: 52px; height: 52px; border-radius: 50%;
+      background: #8B4513; color: white; font-weight: 800; font-size: 1.2rem;
+      display: flex; align-items: center; justify-content: center; margin: 0 auto 16px;
+    }
+    .step h4 { font-weight: 700; color: #1a1a1a; margin-bottom: 8px; }
+    .step p { color: #666; font-size: 0.9rem; line-height: 1.5; }
+
+    /* TESTIMONIALS */
+    .testimonials { background: #fdf8f4; }
+    .testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 50px; }
+    .testi-card { background: white; border-radius: 12px; padding: 32px; border: 1px solid #f0e8df; }
+    .stars { color: #f5c87a; font-size: 1.2rem; margin-bottom: 14px; }
+    .testi-card p { color: #444; line-height: 1.65; font-size: 0.95rem; margin-bottom: 18px; font-style: italic; }
+    .testi-author { font-weight: 700; color: #1a1a1a; font-size: 0.9rem; }
+    .testi-location { color: #999; font-size: 0.85rem; }
+
+    /* CTA */
+    .cta-section {
+      background: linear-gradient(135deg, #3d1f0a, #8B4513);
+      text-align: center; padding: 90px 20px;
+    }
+    .cta-section h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); color: white; font-weight: 800; margin-bottom: 16px; }
+    .cta-section p { color: #e8cdb0; font-size: 1.1rem; max-width: 500px; margin: 0 auto 36px; }
+
+    /* CONTACT */
+    .contact { background: white; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-top: 50px; }
+    .contact-info h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 24px; }
+    .contact-detail { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 20px; }
+    .contact-detail .icon { font-size: 1.3rem; margin-top: 2px; }
+    .contact-detail p { color: #444; line-height: 1.5; }
+    .contact-detail strong { color: #1a1a1a; display: block; }
+    .contact-form { background: #fdf8f4; border-radius: 12px; padding: 36px; border: 1px solid #f0e8df; }
+    .form-group { margin-bottom: 18px; }
+    .form-group label { display: block; font-weight: 600; font-size: 0.9rem; color: #333; margin-bottom: 6px; }
+    .form-group input, .form-group textarea, .form-group select {
+      width: 100%; padding: 12px 16px; border: 1px solid #e0d4c8;
+      border-radius: 8px; font-size: 0.95rem; color: #1a1a1a;
+      background: white; transition: border-color 0.2s;
+    }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+      outline: none; border-color: #8B4513;
+    }
+    .form-group textarea { height: 110px; resize: vertical; }
+    .form-submit {
+      width: 100%; background: #8B4513; color: white; padding: 14px;
+      border: none; border-radius: 8px; font-weight: 700; font-size: 1rem;
+      cursor: pointer; transition: background 0.2s;
+    }
+    .form-submit:hover { background: #a0521a; }
+
+    /* FOOTER */
+    footer {
+      background: #1a0d05; color: #999; text-align: center;
+      padding: 30px 20px; font-size: 0.9rem;
+    }
+    footer a { color: #c8742a; text-decoration: none; }
+
+    @media (max-width: 768px) {
+      nav { padding: 16px 20px; }
+      .nav-links { display: none; }
+      .trust-bar { gap: 24px; }
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Tim's <span>Floor Sanding</span></div>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#process">How It Works</a>
+    <a href="#testimonials">Reviews</a>
+    <a href="#contact" class="nav-cta">Free Quote</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">⭐ Newcastle's Trusted Floor Sanding Specialists</div>
+    <h1>Beautiful Timber Floors.<br><span>Restored to Perfection.</span></h1>
+    <p>Professional floor sanding, polishing and restoration across Newcastle and the Hunter Valley. Dust-minimised. Affordable. Guaranteed results.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">Get a Free Quote</a>
+      <a href="#services" class="btn-secondary">Our Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item"><span class="icon">🏆</span><span><strong>15+ Years</strong> Experience</span></div>
+  <div class="trust-item"><span class="icon">🌿</span><span><strong>Dust-Minimised</strong> System</span></div>
+  <div class="trust-item"><span class="icon">📍</span><span><strong>Newcastle</strong> & Hunter Valley</span></div>
+  <div class="trust-item"><span class="icon">✅</span><span><strong>Free Quotes</strong> — No Obligation</span></div>
+  <div class="trust-item"><span class="icon">💬</span><span><strong>100s</strong> of Happy Customers</span></div>
+</div>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+    <p class="section-label">What We Do</p>
+    <h2 class="section-title">Complete Timber Floor Services</h2>
+    <p class="section-sub">From dusty old floorboards to gleaming showroom finish — we handle the full job, start to finish.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🪵</div>
+        <h3>Floor Sanding</h3>
+        <p>We strip back years of wear, scratches and old finishes to reveal the natural beauty of your timber. Dust-minimised equipment keeps your home clean.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">✨</div>
+        <h3>Polishing & Finishing</h3>
+        <p>Choose from matte, satin or gloss finishes. We use premium water-based and oil-based polyurethanes for a durable, stunning result that lasts.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔧</div>
+        <h3>Floor Restoration</h3>
+        <p>Got gaps, squeaks, damaged boards or stains? We repair and restore your existing floors — often at a fraction of the cost of replacement.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🎨</div>
+        <h3>Staining & Colouring</h3>
+        <p>Transform your floors with a custom stain — from warm honey tones to rich dark walnut. We match your vision and the style of your home.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🏠</div>
+        <h3>New Floor Finishing</h3>
+        <p>Just installed new timber floors? We prepare and finish them perfectly so they're protected and looking their best from day one.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🏢</div>
+        <h3>Commercial Projects</h3>
+        <p>Offices, restaurants, retail spaces and more. We work around your hours — including nights and weekends — to minimise business disruption.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why" id="why">
+  <div class="container">
+    <p class="section-label">Why Tim's</p>
+    <h2 class="section-title">Local, Reliable & Dust-Minimised</h2>
+    <p class="section-sub">We're not a franchise. Tim does the work himself — so you deal with the same person from quote to completion.</p>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="why-num">15+</div>
+        <h4>Years in the Trade</h4>
+        <p>Hundreds of floors sanded across Newcastle and the Hunter Valley</p>
+      </div>
+      <div class="why-item">
+        <div class="why-num">5★</div>
+        <h4>Customer Reviews</h4>
+        <p>Consistently top-rated for quality, cleanliness and communication</p>
+      </div>
+      <div class="why-item">
+        <div class="why-num">0</div>
+        <h4>Hidden Costs</h4>
+        <p>Fixed-price quotes upfront — what we quote is what you pay</p>
+      </div>
+      <div class="why-item">
+        <div class="why-num">48hr</div>
+        <h4>Quote Turnaround</h4>
+        <p>Fast, free quotes with no pressure and no obligation</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+  <div class="container">
+    <p class="section-label">How It Works</p>
+    <h2 class="section-title">Simple. Stress-Free. Sorted.</h2>
+    <p class="section-sub">From your first call to walking on beautiful floors — here's what to expect.</p>
+    <div class="process-steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h4>Free Quote</h4>
+        <p>Contact us with your floor details or we come to you. No obligation, fixed-price quote within 48 hours.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h4>Book a Date</h4>
+        <p>We'll find a time that suits you, including weekends. You'll receive a reminder before we arrive.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h4>We Do the Work</h4>
+        <p>Tim arrives on time with professional equipment. Dust-minimised system, careful preparation, clean worksite.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h4>Enjoy Your Floors</h4>
+        <p>Walk on your beautiful new floors and wonder why you waited so long. Most jobs done in 1–2 days.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <p class="section-label">Reviews</p>
+    <h2 class="section-title">What Our Customers Say</h2>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"Tim did an amazing job on our 80-year-old hardwood floors in Merewether. They look brand new. The dust-minimised system was a game changer — hardly any mess at all. Highly recommend."</p>
+        <div class="testi-author">Sarah M.</div>
+        <div class="testi-location">Merewether, Newcastle</div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"Got three quotes and Tim was the most professional and the best value. He showed up on time, communicated well, and the result is absolutely stunning. Our floors have never looked this good."</p>
+        <div class="testi-author">James & Karen T.</div>
+        <div class="testi-location">Hamilton, Newcastle</div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"Used Tim for a rental property in Maitland — quick turnaround, great finish, tenants were thrilled. Will definitely be using him again for our other properties."</p>
+        <div class="testi-author">Dave R.</div>
+        <div class="testi-location">Maitland, Hunter Valley</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <h2>Ready for Beautiful Floors?</h2>
+    <p>Get a free, no-obligation quote today. Most jobs booked within 1–2 weeks.</p>
+    <a href="#contact" class="btn-primary" style="display:inline-block;">Get My Free Quote</a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+    <p class="section-label">Get in Touch</p>
+    <h2 class="section-title">Free Quote — No Obligation</h2>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Contact Tim Directly</h3>
+        <div class="contact-detail">
+          <span class="icon">📞</span>
+          <p><strong>Phone</strong>0400 000 000 <em style="color:#999;font-size:0.85rem">(placeholder)</em></p>
+        </div>
+        <div class="contact-detail">
+          <span class="icon">📧</span>
+          <p><strong>Email</strong>tim@timsfloorsanding.com.au</p>
+        </div>
+        <div class="contact-detail">
+          <span class="icon">📍</span>
+          <p><strong>Service Area</strong>Newcastle, Lake Macquarie, Hunter Valley, Maitland, Port Stephens and surrounds</p>
+        </div>
+        <div class="contact-detail">
+          <span class="icon">🕐</span>
+          <p><strong>Hours</strong>Mon–Sat: 7am – 5pm<br>After-hours quotes available</p>
+        </div>
+        <br>
+        <p style="color:#666;font-size:0.9rem;line-height:1.6;">Tell us your floor type, approximate area in m², and what finish you're after and we'll get back to you fast.</p>
+      </div>
+      <div class="contact-form">
+        <form>
+          <div class="form-group">
+            <label>Your Name</label>
+            <input type="text" placeholder="John Smith">
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" placeholder="0400 000 000">
+          </div>
+          <div class="form-group">
+            <label>Suburb</label>
+            <input type="text" placeholder="Hamilton, Newcastle...">
+          </div>
+          <div class="form-group">
+            <label>Service Needed</label>
+            <select>
+              <option>Floor Sanding & Polishing</option>
+              <option>Floor Restoration</option>
+              <option>Staining & Colouring</option>
+              <option>New Floor Finishing</option>
+              <option>Commercial Project</option>
+              <option>Not Sure — Need Advice</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Tell Us About Your Floors</label>
+            <textarea placeholder="Approx. area (m²), timber type if known, current condition..."></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send My Quote Request →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Tim's Floor Sanding — Newcastle NSW &nbsp;|&nbsp; <a href="mailto:tim@timsfloorsanding.com.au">tim@timsfloorsanding.com.au</a></p>
+</footer>
+
+</body>
+</html>
