@@ -29,25 +29,41 @@
     /* HERO */
     .hero {
       min-height: 100vh;
-      background: linear-gradient(135deg, #3d1f0a 0%, #6b3210 40%, #8B4513 100%);
+      background: #1a0d05;
       display: flex; align-items: center; justify-content: center;
       text-align: center; padding: 120px 20px 80px;
       position: relative; overflow: hidden;
     }
-    .hero::before {
-      content: ''; position: absolute; inset: 0;
-      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: url('finished.jpg') center center / cover no-repeat;
+      filter: blur(6px) brightness(0.35);
+      transform: scale(1.05);
     }
-    .hero-content { position: relative; max-width: 780px; }
+    .hero-content { position: relative; max-width: 900px; display: flex; flex-direction: column; align-items: center; }
+    .hero-inner { display: flex; align-items: center; gap: 50px; flex-wrap: wrap; justify-content: center; }
+    .hero-text { max-width: 520px; text-align: left; }
+    .hero-img-card {
+      flex-shrink: 0; width: 300px; border-radius: 16px;
+      overflow: hidden; box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+      border: 3px solid rgba(255,255,255,0.15);
+    }
+    .hero-img-card img { width: 100%; height: 380px; object-fit: cover; display: block; }
+    @media (max-width: 860px) {
+      .hero-text { text-align: center; }
+      .hero-img-card { width: 260px; }
+      .hero-img-card img { height: 280px; }
+    }
+    @media (max-width: 600px) { .hero-img-card { display: none; } }
     .hero-badge {
       display: inline-block; background: rgba(255,255,255,0.15); color: #f5dfc0;
       padding: 6px 18px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;
       letter-spacing: 0.5px; margin-bottom: 24px; border: 1px solid rgba(255,255,255,0.2);
     }
-    .hero h1 { font-size: clamp(2.4rem, 6vw, 4rem); color: white; font-weight: 800; line-height: 1.15; margin-bottom: 20px; }
+    .hero h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); color: white; font-weight: 800; line-height: 1.15; margin-bottom: 20px; }
     .hero h1 span { color: #f5c87a; }
-    .hero p { font-size: 1.2rem; color: #e8cdb0; max-width: 580px; margin: 0 auto 40px; line-height: 1.6; }
-    .hero-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .hero p { font-size: 1.1rem; color: #e8cdb0; margin: 0 0 36px; line-height: 1.6; }
+    .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
     .btn-primary {
       background: #f5c87a; color: #3d1f0a; padding: 16px 36px;
       border-radius: 8px; font-weight: 700; font-size: 1rem;
@@ -184,13 +200,21 @@
 
 <!-- HERO -->
 <section class="hero">
+  <div class="hero-bg"></div>
   <div class="hero-content">
-    <div class="hero-badge">⭐ Newcastle's Trusted Floor Sanding Specialists</div>
-    <h1>Beautiful Timber Floors.<br><span>Restored to Perfection.</span></h1>
-    <p>Professional floor sanding, polishing and restoration across Newcastle and the Hunter Valley. Dust-minimised. Affordable. Guaranteed results.</p>
-    <div class="hero-btns">
-      <a href="#contact" class="btn-primary">Get a Free Quote</a>
-      <a href="#services" class="btn-secondary">Our Services</a>
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="hero-badge">⭐ Newcastle's Trusted Floor Sanding Specialists</div>
+        <h1>Beautiful Timber Floors.<br><span>Restored to Perfection.</span></h1>
+        <p>Professional floor sanding, polishing and restoration across Newcastle and the Hunter Valley. Dust-minimised. Affordable. Guaranteed results.</p>
+        <div class="hero-btns">
+          <a href="#contact" class="btn-primary">Get a Free Quote</a>
+          <a href="#services" class="btn-secondary">Our Services</a>
+        </div>
+      </div>
+      <div class="hero-img-card">
+        <img src="sanding.jpg" alt="Tim sanding a timber floor in Newcastle" />
+      </div>
     </div>
   </div>
 </section>
